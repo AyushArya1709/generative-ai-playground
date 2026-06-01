@@ -15,3 +15,9 @@ embeddings = model.encode(chunks)
 print(embeddings.shape)
 
 print(embeddings[0][:10])
+
+question = "What are transformers?"
+
+question_embedding = model.encode(question)
+
+print(question_embedding.shape)
