@@ -1,4 +1,6 @@
 from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 model = SentenceTransformer(
     "all-MiniLM-L6-v2"
@@ -21,3 +23,10 @@ question = "What are transformers?"
 question_embedding = model.encode(question)
 
 print(question_embedding.shape)
+
+scores = cosine_similarity(
+    [question_embedding],
+    embeddings
+)
+
+print(scores)
