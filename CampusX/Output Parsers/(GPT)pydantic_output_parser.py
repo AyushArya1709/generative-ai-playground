@@ -26,11 +26,15 @@ template = PromptTemplate(
     template = 'Generate the name, age and city of a fictional {place} person \n {format_instruction}',
 )
     
-prompt = template.invoke({'place':'indian'})
+chain = template | model | parser
+
+final_result = chain.invoke({'place':'american'})
+    
+''' prompt = template.invoke({'place':'indian'})
 
 result = model.invoke(prompt)
 
-final_result = parser.parse(result.content)
+final_result = parser.parse(result.content)'''
 
 print(final_result)
 
