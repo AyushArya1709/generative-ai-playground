@@ -28,30 +28,29 @@ prompt1 = PromptTemplate(
 )
 
 # 🔥 STEP 1: CLASSIFIER CHAIN
-
+ 
 classifier_chain = prompt1 | model | parser2
 
 prompt2 = PromptTemplate(
     template = 'write an appropriate response to this positive feedback \n {feedback}',
-    input_variables = ['Feedback'],
+    input_variables = ['feedback'],
 )
  
 prompt3 = PromptTemplate(
     template = 'write an appropriate response to this negative feedback \n {feedback}',
-    input_variables = ['Feedback'],
+    input_variables = ['feedback'],
 )    
 
 branch_chain = RunnableBranch(
     (lambda x:x.sentiment == 'positive' , prompt2 | model | parser1),
     (lambda x:x.sentiment == 'negative' , prompt3 | model | parser1),
      RunnableLambda(lambda x: "could not find sentiment") 
-    )  # the problem here is that, this is not a chain you have to execute a chain here
+    )  # the problem here is that, this is not a chain "you have to execute a chain here"
 
 # 🚀 STEP 2: FINAL CHAIN
 
 final_chain = classifier_chain | branch_chain
 
-print(final_chain.invoke({'feedback':'This is a terrable phone'}))
+print(final_chain.invoke({'feedback':'This is a terrible phone'}))
 
 final_chain.get_graph().print_ascii()
-
