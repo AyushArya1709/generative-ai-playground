@@ -9,7 +9,7 @@ from typing import Literal
 
 load_dotenv()
 
-model_name = "openai/gpt-oss-20b" #Active model on Groq
+model_name = "openai/gpt-oss-120b" #Active model on Groq
 
 model = ChatGroq(model = model_name)
 
