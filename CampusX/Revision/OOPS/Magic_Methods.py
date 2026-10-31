@@ -18,6 +18,21 @@ class Fraction:
         temp_num = other.den * self.num + self.den * other.num 
         temp_den = self.den * other.den
         
+    def __sub__(self, other):
+        
+        temp_num = other.den * self.num - self.den * other.num 
+        temp_den = self.den * other.den
+            
+    def __mul__(self, other):
+        
+        temp_num = self.num * other.num  
+        temp_den = self.den * other.den
+         
+    def __truediv__(self, other):
+        
+        temp_num = self.num * other.den
+        temp_den = self.den * other.num
+    
         result = Fraction(temp_num, temp_den)
         result.simplify()
 
