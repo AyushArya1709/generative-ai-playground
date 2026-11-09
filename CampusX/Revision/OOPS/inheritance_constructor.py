@@ -4,17 +4,9 @@ class Phone:
         self.price = price
         self.brand = brand
         self.camera = camera
-
-    def buy(self):
-        print ("Buying a phone")
-
-
-    def return_phone(self):
-        print ("Returning a phone")
-
-class FeaturePhone(Phone):
-    pass
-
+        
+        
+        
 class SmartPhone(Phone):
     pass
 
