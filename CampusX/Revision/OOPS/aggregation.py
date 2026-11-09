@@ -25,4 +25,4 @@ cust = Customer("Ayush","Gender",add)
 
 cust.edit_profile("Ankit","Gurgaon",122011,"Haryana")
 
-print(cust.address.pincode)        
+print(cust.address.pincode)
