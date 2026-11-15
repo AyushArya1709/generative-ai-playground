@@ -22,6 +22,8 @@ class SmartPhone(Phone):
 
 
 s = SmartPhone(20000, "Apple", 12)
+p = Phone(1000,"Samsung",1)
 
 s.buy()
 s.review()
+p.review()
