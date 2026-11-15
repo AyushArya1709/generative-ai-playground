@@ -1,4 +1,3 @@
-'''
 class Geometry:
     
     def area(self, a, b = 0):
@@ -10,8 +9,8 @@ class Geometry:
 obj = Geometry()
 obj.area(4)
 obj.area(4,5)
-'''
-from fractions import Fraction
+
+''' from fractions import Fraction
 
 class Geometry:
     
@@ -19,4 +18,4 @@ class Geometry:
         return Fraction(1, 3) * Fraction(22, 7) * r * r * h
     
 obj = Geometry()
-print(obj.area(5,4))
+print(obj.area(5,4)) '''
