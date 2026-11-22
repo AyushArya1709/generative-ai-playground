@@ -2,7 +2,7 @@
 
 RunnableSequence
 
-RunnableSequence is a sequential chain of runnables in LangChain that executes each step one after another, passing the output of one step as the input to the next.
+RunnableSequence is a sequential chain of runnables in LangChain that executes each step one after another, passing the output of first step as the input to the next.
 
 It is useful when you need to compose multiple runnables together in a structured workflow.
 
